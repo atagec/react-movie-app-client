@@ -1,9 +1,9 @@
 {
-  "name": "sample-project-learning",
+  "name": "react-movie-app-client",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://atagec.github.io/react-movie-app",
+  "homepage": "https://atagec.github.io/react-movie-app-client",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
