@@ -32,7 +32,7 @@ export default function Modal() {
         director: directorValue,
         rating: ratingValue
       };
-      return await request("http://localhost:4000/", addMovieMutation, payload);
+      return await request("https://react-movie-app-server-backend.onrender.com/", addMovieMutation, payload);
     },
     onSuccess: () => {
       console.log("on success");

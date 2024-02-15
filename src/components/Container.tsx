@@ -35,7 +35,8 @@ export default function Container() {
   const { status, data, error } = useQuery({
     // queryFn: () => fetchMovies(),
     queryFn: async () => {
-      return await request("http://localhost:4000/", getAllMovies);
+      return await request("https://react-movie-app-server-backend.onrender.com/", getAllMovies);
+      // return await request("http://localhost:4000/", getAllMovies);
     },
     queryKey: ["movies"],
     select: (data: any) => {
