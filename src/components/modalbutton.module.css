@@ -1,0 +1,13 @@
+.modalButton {
+  position: absolute;
+  right: 10%;
+  top: 0%;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: #242424;
+  padding: 15px;
+  border-radius: 30px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
