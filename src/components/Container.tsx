@@ -35,7 +35,7 @@ export default function Container() {
   const { status, data, error } = useQuery({
     // queryFn: () => fetchMovies(),
     queryFn: async () => {
-      return await request("https://react-movie-app-server-backend.onrender.com/", getAllMovies);
+      return await request("http://localhost:4000/", getAllMovies);
       // return await request("http://localhost:4000/", getAllMovies);
     },
     queryKey: ["movies"],
@@ -76,7 +76,7 @@ export default function Container() {
         <ul className={styles.cardList}>
           {filteredMovies?.map((item: any) => {
             return (
-              <li key={item.id} className={styles2.card}>
+              <li data-testid="card-item" key={item.id} className={styles2.card}>
                 <img src={item.poster} alt="" className={styles2.cardImage} />
                 <div className={styles2.cardContent}>
                   <span className={styles2.cardItemContent}><span className={styles2.cardItemStar}>☆</span>{item.rating}</span>

@@ -6,7 +6,7 @@ export default function ModalButton() {
 
 
   return (
-    <button className={styles.modalButton} onClick={() => openModal(true)}>
+    <button data-testid="add-movie-button" className={styles.modalButton} onClick={() => openModal(true)}>
       Add New Movie
     </button>
   );

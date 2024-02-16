@@ -32,7 +32,7 @@ export default function Modal() {
         director: directorValue,
         rating: ratingValue
       };
-      return await request("https://react-movie-app-server-backend.onrender.com/", addMovieMutation, payload);
+      return await request("http://localhost:4000/", addMovieMutation, payload);
     },
     onSuccess: () => {
       console.log("on success");
@@ -68,7 +68,7 @@ export default function Modal() {
   return (
     <>
       {isOpen && (
-        <div className={styles.modalContainer}>
+        <div className={styles.modalContainer} data-testid="modal-container">
           <div
             className={styles.modalOverlay}
             onClick={() => {
@@ -88,22 +88,23 @@ export default function Modal() {
             </button>
             <div className={styles.modalInput}>
               <label htmlFor="title">Title</label>
-              <input type="text" id="title" value={titleValue} onChange={e => setTitleValue(e.target.value)} required={true} />
+              <input type="text" id="title" value={titleValue} onChange={e => setTitleValue(e.target.value)} required={true}  data-testid="modal-title-input" />
             </div>
             <div className={styles.modalInput}>
               <label htmlFor="director">Director</label>
-              <input type="text" id="director" value={directorValue} onChange={e => setDirectorValue(e.target.value)} required={true} />
+              <input type="text" id="director" value={directorValue} onChange={e => setDirectorValue(e.target.value)} required={true} data-testid="modal-director-input" />
             </div>
             <div className={styles.modalInput}>
               <label htmlFor="rating">Rating</label>
-              <input type="text" id="rating" value={ratingValue} onChange={e => setRatingValue(e.target.value)} required={true} />
+              <input type="text" id="rating" value={ratingValue} onChange={e => setRatingValue(e.target.value)} required={true} data-testid="modal-rating-input" />
             </div>
             <div className={styles.modalInput}>
               <label htmlFor="imageurl">Image URL</label>
-              <input type="text" id="imageurl" value={posterValue} onChange={e => setPosterValue(e.target.value)} required={true} />
+              <input type="text" id="imageurl" value={posterValue} onChange={e => setPosterValue(e.target.value)} required={true} data-testid="modal-imageurl-input" />
             </div>
             <div className={styles.modalButtonWrapper}>
               <button
+                data-testid="modal-add-button"
                 className={styles.addButton}
                 onClick={async () => {
                   try {
