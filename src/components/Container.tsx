@@ -18,20 +18,12 @@ const getAllMovies = gql`
   }
 `;
 
-// interface Response {
-//   status: any;
-//   data: any;
-//   error: any;
-// }
 
 export default function Container() {
-  // const [movies, setMovies] = useState(movies)
   const { searchQuery } = useSearchStore();
 
 
-  //
-  // const [movieList, setMovieList] = useState<Movie[]>([])
-  // *
+
   const { status, data, error } = useQuery({
     // queryFn: () => fetchMovies(),
     queryFn: async () => {
@@ -56,16 +48,6 @@ export default function Container() {
   }, [data, searchQuery]);
 
 
-  // const { mutateAsync: addMovieMutation } = useMutation({
-  //   mutationFn: addMovie
-  // })
-
-  // *
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // ##################################33
   return (
     <>
       {status === "pending" ? (
@@ -90,26 +72,4 @@ export default function Container() {
       )}
     </>
   );
-  // #############################
-
-  // return (
-
-  //   <div>
-  //   <ul className={styles.cardList}>
-  //     {filteredMovies.map(item => {
-  //       return (
-  //         <li key={item.id} className={styles2.card}>
-  //           <img src={item.poster}  alt="" className={styles2.cardImage}/>
-  //           <div className={styles2.cardContent}>
-  //             <h2 className={styles2.cardHeader}>{item.title}</h2>
-  //             <span className={styles2.cardItemContent}>Director: {item.director}</span>
-  //             <span className={styles2.cardItemContent}>Rating: {item.rating}</span>
-  //           </div>
-  //         </li>
-  //       );
-  //     })}
-  //   </ul>
-  //    </div>
-
-  // );
 }
