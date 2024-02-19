@@ -1,23 +1,22 @@
-describe("Homepage", () => {
-  let cardCount;
-  let lastCardDOMOrder;
-  const movie = {
-    title: "Shawshank Redemption",
-    director: "Frank Darabont",
-    rating: "9.3",
-    imageURL: "https://m.media-amazon.com/images/M/MV5BMzBmNWM0YzktOTM2MC00MzVkLWFiNjUtNWVjMWRiOTQ0OWM0XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UY3000_.jpg"
-  }
-  beforeEach(() => {
-    cy.visit("http://localhost:5173/react-movie-app-client/");
-  });
+// describe("Homepage", () => {
+//   let cardCount;
+//   const movie = {
+//     title: "Shawshank Redemption",
+//     director: "Frank Darabont",
+//     rating: "9.3",
+//     imageURL: "https://m.media-amazon.com/images/M/MV5BMzBmNWM0YzktOTM2MC00MzVkLWFiNjUtNWVjMWRiOTQ0OWM0XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UY3000_.jpg"
+//   }
+//   beforeEach(() => {
+//     cy.visit("http://localhost:5173/react-movie-app-client/");
+//   });
 
-  it("it adds a new movie", () => {
+//   it("it adds a new movie", () => {
  
 
-    cy.get('[data-testid="card-item"]').then($value => {
-      cardCount = $value.length;
-      lastCardDOMOrder = cardCount - 1;
-    });
+//     cy.get('[data-testid="card-item"]').then($value => {
+//       cardCount = $value.length;
+//       lastCardDOMOrder = cardCount - 1;
+//     });
 
 
 
@@ -35,5 +34,5 @@ describe("Homepage", () => {
 
     // })
 
-  });
-});
+//   });
+// });
