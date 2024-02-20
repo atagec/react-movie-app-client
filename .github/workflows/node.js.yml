@@ -46,7 +46,7 @@ jobs:
         with:
           # Run the application with npm start command
           # Run the npx cypress run command
-          start: npm start
+          build: npm run build
           browser: chrome
           wait-on: 'http://localhost:5173'
          
