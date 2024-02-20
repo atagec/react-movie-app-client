@@ -38,19 +38,20 @@ jobs:
       - name: Install dependencies
         run: npm install
         
+      
+
+      - name: Build
+        run: npm run build
       - name: Cypress run
       # Runs the npm install command
         uses: cypress-io/github-action@v6
         with:
           # Run the application with npm start command
           # Run the npx cypress run command
-          start: npm start
+          start: npm run build
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
-      - name: Build
-        run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
