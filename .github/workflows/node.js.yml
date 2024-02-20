@@ -38,8 +38,6 @@ jobs:
       - name: Install dependencies
         run: npm install
         
-      
-
       - name: Build
         run: npm run build
       - name: Cypress run
@@ -48,7 +46,9 @@ jobs:
         with:
           # Run the application with npm start command
           # Run the npx cypress run command
-          start: npm run build
+          start: npm start
+          browser: chrome
+          wait-on: 'http://localhost:5173'
          
       - name: Setup Pages
         uses: actions/configure-pages@v4
