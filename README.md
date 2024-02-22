@@ -1,32 +1,64 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Movie App - Client
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-![test-video-ezgif com-video-to-gif-converter](https://github.com/atagec/react-movie-app-client/assets/99540865/a01f2b76-ed1e-4440-85ff-717a336b91d4)
+![App Screenshot](https://iili.io/JG3aON4.jpg)
 
 
-## Expanding the ESLint configuration
+This is a simple web application that allows you to create your favorite movie list.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Functionality
+- Users can see a list of movies on the front end.
+- They can search for the movie they want.
+- They also can add a new movie to the database.
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
+### Frontend
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- React as a UI library ( TypeScript )
+- react-query, graphql-request to communicate with the backend.
+- zustand for global state management.
+- Github Actions, Github Pages for deployment and hosting.
+
+### Backend
+- GraphQL, Apollo, prisma ( to connect MongoDB, and perform write-find operations ).
+- MongoDB as a database.
+- Render to host the backend.
+
+
+## Run Locally
+
+Setup the [backend](https://github.com/atagec/react-movie-app-server) as well for full functionality.
+
+- Clone the project
+
+```bash
+  git clone https://github.com/atagec/react-movie-app-client.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Go to the project directory
+
+```bash
+  cd react-movie-app-client
+```
+
+- Install dependencies
+
+```bash
+  npm install
+```
+
+- Start the server
+
+```bash
+  npm run dev
+```
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npx cypress run
+```
+
